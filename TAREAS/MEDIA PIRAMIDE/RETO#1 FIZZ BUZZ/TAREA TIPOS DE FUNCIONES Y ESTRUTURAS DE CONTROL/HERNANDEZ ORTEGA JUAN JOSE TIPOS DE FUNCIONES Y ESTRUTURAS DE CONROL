@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string> 
+
+using namespace std;
+
+bool verificacion_login(const string& usuario, const string& contrasena) {
+    
+    string usuario_verificacion = "JuanJo";
+    string contrasena_verificacion = "4560";
+
+    return (usuario == usuario_verificacion && contrasena == contrasena_verificacion);
+}
+
+
+void numero_OTP(const string& usuario, const string& contrasena) {
+    
+    srand(time(NULL));
+
+    int OTP = rand() % 900000 + 100000;
+
+    cout << "Login exitoso para el usuario " << usuario << ". Tu número OTP es: " << OTP << endl;
+}
+
+int main() {
+  
+    string usuario;
+    string contrasena;
+   
+    cout << "Ingresa tu nombre de usuario: ";
+    cin >> usuario;
+
+    cout << "Ingresa tu contraseña: ";
+    cin >> contrasena;
+
+   if (verificacion_login(usuario, contrasena)) {
+       
+    numero_OTP(usuario, contrasena);
+    } else {
+        // Si la verificación falla, mostrar un mensaje de error
+        cout << "Login fallido. Usuario o contraseña incorrectos." << endl;
+    }
+
+   
+    return 0;
+}

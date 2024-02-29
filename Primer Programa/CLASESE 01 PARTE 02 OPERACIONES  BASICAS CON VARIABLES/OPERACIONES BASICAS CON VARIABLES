@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+int x,y;
+
+int main(){
+
+    cout << "ingresa X:" <<  endl;
+    cin >> x;
+    cout <<"ingresa Y:" <<endl;
+    cin >> y;
+
+    cout << "Suma:" << x+y << endl;
+
+    return 0;
+    }
