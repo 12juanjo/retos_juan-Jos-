@@ -1,0 +1,26 @@
+#include <thread>
+
+using namespace std;
+
+int main() {
+    int segundos;
+    
+    cout << "Ingrese la cantidad de segundos para la cuenta regresiva: ";
+    cin >> segundos;
+
+    if (segundos <= 0) {
+        cout << "Por favor, ingrese un número positivo para la cuenta regresiva.\n";
+        return 1;  // Salir del programa con código de error
+    }
+
+    for (int i = segundos; i > 0; i--) {
+        cout << "Tiempo restante: " << i << " segundos\n";
+
+        // Pausa de 1 segundo entre cada iteración
+        this_thread::sleep_for(chrono::seconds(1));
+    }
+
+    cout << "¡Cuenta regresiva finalizada!\n";
+
+    return 0;
+}
